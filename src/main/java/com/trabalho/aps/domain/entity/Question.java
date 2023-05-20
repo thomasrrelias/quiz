@@ -1,5 +1,6 @@
 package com.trabalho.aps.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
@@ -12,10 +13,8 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Question {
-
-//    public Question() {
-//    }
 
     public Question(String pergunta, List<String> alternativa, int pontuacao, int respostaCorreta) {
         setPergunta(pergunta);
